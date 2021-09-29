@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.android.chaldhal.data.models.Result" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/userNameHint"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/background_circle"
+            android:fontFamily="@font/gotham_pro_bold"
+            android:gravity="center"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="J" />
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/gotham_pro_medium"
+            android:maxLines="2"
+            android:text="@{item.name.first}"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userNameHint"
+            app:layout_constraintTop_toTopOf="@id/userNameHint"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="James" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/gotham_pro_regular"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/userNameHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userNameHint"
+            app:layout_constraintTop_toBottomOf="@+id/firstName"
+            tools:text="24-12-1999" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userNameHint"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
